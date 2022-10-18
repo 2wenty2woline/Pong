@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\habea\source\repos\Pong\</FILEPATH>
+      <FILENAME>MovementComponent.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'MovementComponent::directionUpDown' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MovementComponent::{ctor}</FUNCTION>
+    <DECORATED>??0MovementComponent@@QEAA@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MovementComponent::directionUpDown</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\habea\source\repos\Pong\</FILEPATH>
+      <FILENAME>MovementComponent.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'MovementComponent::typeOfDirection' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MovementComponent::{ctor}</FUNCTION>
+    <DECORATED>??0MovementComponent@@QEAA@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MovementComponent::typeOfDirection</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\habea\source\repos\Pong\</FILEPATH>
+      <FILENAME>MovementComponent.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'MovementComponent::typyOfHit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MovementComponent::{ctor}</FUNCTION>
+    <DECORATED>??0MovementComponent@@QEAA@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MovementComponent::typyOfHit</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
