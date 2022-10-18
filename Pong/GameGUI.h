@@ -1,7 +1,5 @@
 #pragma once
 #include "Entity.h"
-#include "CoreDefinition.h"
-#include <SDL_ttf.h>
 #include <string>
 
 class GameGUI : public Entity
@@ -10,11 +8,11 @@ public:
     GameGUI();
     virtual ~GameGUI();
 
-	TTF_Font*       font;
-    SDL_Renderer*   render;
-	SDL_Surface*    surface;
-	SDL_Texture*    texture;
-    SDL_Rect        entity;
+	TTF_Font* font;
+    SDL_Renderer* render;
+	SDL_Surface* surface;
+	SDL_Texture* texture;
+    SDL_Rect entity;
     
     float posX;
     float posY;
@@ -24,8 +22,7 @@ public:
 
     void SetScore(int score);
 
-    virtual void Init(float width_x, float height_y);
-    virtual void Update(float& dt);
-    virtual void Render(SDL_Renderer* render);
+    virtual void Init(float width_x, float height_y) override;
+    virtual void Update(float& dt) override;
+    virtual void Render(SDL_Renderer* render) override;
 };
-

@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "MovementComponent.h"
 
 class Paddle : public Object
 {
@@ -11,4 +12,3 @@ public:
     virtual void Update(float& dt) override;
     virtual void Render(SDL_Renderer* render) override;
 };
-

@@ -1,6 +1,5 @@
 #pragma once
 #include "Paddle.h"
-#include "MovementComponent.h"
 
 class Enemy : public Paddle 
 {
@@ -17,4 +16,3 @@ public:
     virtual void Update(float& dt) override;
     virtual void Render(SDL_Renderer* render) override;
 };
-

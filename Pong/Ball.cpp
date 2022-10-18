@@ -33,10 +33,20 @@ bool Ball::CheckCollisionObjcet(Ball* ball, Paddle* entity)
 		return false;
 	}
 
-	if ((ball->posX <= entity->posX + constantState::PADDLE_WIDTH) &&
-		(ball->posX + constantState::PADDLE_WIDTH >= entity->posX) &&
-		(ball->posY <= entity->posY + constantState::PADDLE_HEIGHT) &&
-		(ball->posY + constantState::BALL_HEIGHT >= entity->posY))
+	float entityLeft = entity->posX;
+	float entityRight = entityLeft + constantState::PADDLE_WIDTH;
+	float entityTop = entity->posY;
+	float entityBottom = entityTop + constantState::PADDLE_HEIGHT;
+
+	float ballLeft = ball->posX;
+	float ballRight = ballLeft + constantState::BALL_WIDTH;
+	float ballTop = ball->posY;
+	float ballBottom = ballTop + constantState::BALL_HEIGHT;
+
+	if ((ballLeft <= entityRight) &&
+		(ballRight >= entityLeft) &&
+		(ballTop <= entityBottom) &&
+		(ballBottom >= entityTop))
 		
 	{
 		/* Check what type of hit */
@@ -59,21 +69,31 @@ void Ball::CheckTypeOfHit(Ball* ball, Paddle* entity)
 		return;
 	}
 
-	float paddleRangeUpper = entity->posY + ((constantState::PADDLE_HEIGHT / 3.0f));
-	float paddleRangeBottom = entity->posY + constantState::PADDLE_HEIGHT - (constantState::PADDLE_HEIGHT / 3.0f);
+	float entityLeft = entity->posX;
+	float entityRight = entityLeft + constantState::PADDLE_WIDTH;
+	float entityTop = entity->posY;
+	float entityBottom = entityTop + constantState::PADDLE_HEIGHT;
 
-	if ((entity->posY <= ball->posY + constantState::BALL_HEIGHT) &&
-		(ball->posY + constantState::BALL_HEIGHT <= paddleRangeUpper + 10))
+	float ballLeft = ball->posX;
+	float ballRight = ballLeft + constantState::BALL_WIDTH;
+	float ballTop = ball->posY;
+	float ballBottom = ballTop + constantState::BALL_HEIGHT;
+
+	float paddleRangeUpper = entityTop + (constantState::PADDLE_HEIGHT / 2.0f);
+	float paddleRangeBottom = entityBottom - (constantState::PADDLE_HEIGHT / 3.0f);
+
+	if ((entityTop <= ballBottom) &&
+		(ballBottom <= paddleRangeUpper))
 	{
 		movementComponent->typyOfHit = TypeOfHit::TOP;
 	}
-	else if ((ball->posY >= paddleRangeUpper) &&
-			 (ball->posY + constantState::BALL_HEIGHT <= paddleRangeBottom))
+	else if ((ballTop >= paddleRangeUpper) &&
+			 (ballBottom <= paddleRangeBottom))
 	{
 		movementComponent->typyOfHit = TypeOfHit::MIDDLE;
 	}
-	else if ((ball->posY <= entity->posY + constantState::PADDLE_HEIGHT) &&
-			 (ball->posY + constantState::BALL_HEIGHT >= paddleRangeBottom))
+	else if ((ballTop <= entityBottom) &&
+			 (ballBottom >= paddleRangeBottom))
 	{
 		movementComponent->typyOfHit = TypeOfHit::BOTTOM;
 	}
@@ -92,17 +112,16 @@ bool Ball::CheckCollisionWall(Ball* ball)
 
 	if (ball->posY <= 0.0f)
 	{
-		movementComponent->directionUpDown	= TypeOfDirection::DOWN;
-		movementComponent->typyOfHit		= TypeOfHit::NONE;
+		movementComponent->directionUpDown = TypeOfDirection::DOWN;
+		movementComponent->typyOfHit = TypeOfHit::NONE;
 		return true;
 	}
 	else if (ball->posY + constantState::BALL_HEIGHT >= constantState::WINDOW_HEIGHT)
 	{
-		movementComponent->directionUpDown	= TypeOfDirection::UP;
-		movementComponent->typyOfHit		= TypeOfHit::NONE;
+		movementComponent->directionUpDown = TypeOfDirection::UP;
+		movementComponent->typyOfHit = TypeOfHit::NONE;
 		return true;
 	}
-
 	return false;
 }
 
@@ -153,17 +172,16 @@ void Ball::Move(const int& direction, const float& dt)
 void Ball::Init(float width_x, float height_y)
 {
 	speed = constantState::BALL_SPEED;
+	movementComponent->typeOfDirection = TypeOfDirection::RIGHT;
+	movementComponent->typyOfHit = TypeOfHit::NONE;
+	movementComponent->directionUpDown = TypeOfDirection::NONE;
 
-	movementComponent->typeOfDirection	= TypeOfDirection::RIGHT;
-	movementComponent->typyOfHit		= TypeOfHit::NONE;
-	movementComponent->directionUpDown	= TypeOfDirection::NONE;
-
-	posX		= width_x;
-	posY		= height_y;
-	entity.x	= posX;
-	entity.y	= posY;
-	entity.w	= constantState::BALL_WIDTH;
-	entity.h	= constantState::BALL_HEIGHT;
+	posX = width_x;
+	posY = height_y;
+	entity.x = posX;
+	entity.y = posY;
+	entity.w = constantState::BALL_WIDTH;
+	entity.h = constantState::BALL_HEIGHT;
 }
 
 void Ball::Update(float& dt)

@@ -2,20 +2,20 @@
 
 void Game::InitComponents()
 {
-	window				= nullptr;
-	screenSurface		= nullptr;
-	render				= nullptr;
-	gameFont			= nullptr;
+	window = nullptr;
+	screenSurface = nullptr;
+	render = nullptr;
+	gameFont = nullptr;
 
-	running				= true;
-	dt					= 0.0f;
+	running = true;
+	dt = 0.0f;
 	playerScoreOnScreen = 0;
     enemyScoreOnScreen	= 0;
 
-	ball				= Ball::GetInstance();
-	player				= new Player;
-	enemy				= new Enemy;
-	sounds				= new SoundsComponent;
+	ball = Ball::GetInstance();
+	player = new Player;
+	enemy = new Enemy;
+	sounds = new SoundsComponent;
 }
 
 void Game::InitWindow()
@@ -124,18 +124,11 @@ void Game::Update()
 		return;
 	}
 
-	/* Update the Player */
 	player->Update(dt);
 
-	/* UpDate the Enemy */
 	enemy->Update(dt);
 
-	/* Update the Ball */
-	if (ball != nullptr)
-	{
-		ball->Update(dt);
-	}
-	
+	ball->Update(dt);
 
 	while (SDL_PollEvent(&event))
 	{
@@ -190,38 +183,33 @@ void Game::Update()
 	/* Sound Ball at wall */
 	if (ball->CheckCollisionWall(ball))
 	{
-		Mix_PlayChannel(-1, sounds->wallHitSound, 0);
+		Mix_PlayChannel(-1, sounds->soundsList[1], 0);
 	}
 
+	/* Set direction */
 	if (ball->CheckCollisionObjcet(ball, enemy))
 	{
-		/* Set direction */
 		ball->movementComponent->typeOfDirection = TypeOfDirection::LEFT;
 
-		/* Play sounds */
 		Mix_PlayChannel(-1, sounds->soundsList[0], 0);
 	}
 	else if(ball->CheckCollisionObjcet(ball, player))
 	{
-		/* Set direction */
 		ball->movementComponent->typeOfDirection = TypeOfDirection::RIGHT;
 
-		/* Play sounds */
-		Mix_PlayChannel(-1, sounds->soundsList[1], 0);
+		Mix_PlayChannel(-1, sounds->soundsList[0], 0);
 	}
 
-	/* Ball reset */
+	/* Ball reset and set score */
 	if ((ball->posX + constantState::BALL_WIDTH < 0.0f))
 	{
 		ball->Init(constantState::WINDOW_WIDTH / 2.0f - constantState::BALL_WIDTH / 2.0f, constantState::WINDOW_HEIGHT / 2.0f - constantState::BALL_HEIGHT / 2.0f);
 
-		/* Set score */
 		++playerScoreOnScreen;
 		scorePlayer.SetScore(playerScoreOnScreen);
 	}
 	else if (ball->posX > constantState::WINDOW_WIDTH)
 	{
-		/* Set score */
 		++enemyScoreOnScreen;
 		scorEnemy.SetScore(enemyScoreOnScreen);
 	}
@@ -254,7 +242,6 @@ void Game::Render()
 	/* Enemy */
 	enemy->Render(render);
 
-	/* Present the backbuffer */
 	SDL_RenderPresent(render);
 }
 

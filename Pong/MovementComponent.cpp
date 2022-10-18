@@ -1,5 +1,4 @@
 #include "MovementComponent.h"
-#include <iostream>
 
 MovementComponent::MovementComponent()
 {

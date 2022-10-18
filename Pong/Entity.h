@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_ttf.h>
+#include "CoreDefinition.h"
 
 class Entity
 {
@@ -11,4 +13,3 @@ public:
 
     virtual void Render(SDL_Renderer* render) = 0;
 };
-

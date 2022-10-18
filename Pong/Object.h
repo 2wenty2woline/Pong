@@ -1,6 +1,5 @@
 #pragma once
 #include "Entity.h"
-#include "CoreDefinition.h"
 
 class Object : public Entity
 {
@@ -19,4 +18,3 @@ public:
     virtual void Update(float& dt) override;
     virtual void Render(SDL_Renderer* render) override;
 };
-

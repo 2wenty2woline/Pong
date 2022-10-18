@@ -5,7 +5,6 @@
 class SoundsComponent
 {
 public:
-
     SoundsComponent();
     virtual ~SoundsComponent();
 
@@ -15,4 +14,3 @@ public:
 
     void Init();
 };
-

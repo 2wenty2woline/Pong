@@ -12,4 +12,3 @@ public:
 
     void Render(SDL_Renderer* render);
 };
-

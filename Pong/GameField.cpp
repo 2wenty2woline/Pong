@@ -10,11 +10,10 @@ GameField::~GameField()
 
 void GameField::Render(SDL_Renderer* render)
 {
-	/* Set the draw color to be white */
 	SDL_SetRenderDrawColor(render, 0xFF, 0xFF, 0xFF, 0xFF);
 
 	/* Draw the line */
-	for (int y = 0; y < 720; ++y)
+	for (int y = 0; y < constantState::WINDOW_HEIGHT; ++y)
 	{
 		if (y % 5)
 		{

@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+/Pong/.vs
+/Pong/x64
+
 # Compiled Object files
 *.slo
 *.lo
@@ -10,11 +13,6 @@
 # Precompiled Headers
 *.gch
 *.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
 # Fortran module files
 *.mod

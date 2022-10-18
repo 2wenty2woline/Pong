@@ -11,7 +11,6 @@ Paddle::~Paddle()
 void Paddle::Init(float width_x, float height_y)
 {
 	speed = constantState::PADDLE_SPEED;
-
 	posX = width_x;
 	posY = height_y;
     entity.x = posX;
@@ -22,14 +21,13 @@ void Paddle::Init(float width_x, float height_y)
 
 void Paddle::Update(float& dt)
 {
+	/* Reset */
 	if (posY < 0)
 	{
-		/* Reset */
 		posY = 0;
 	}
 	else if (posY > (constantState::WINDOW_HEIGHT - constantState::PADDLE_HEIGHT))
 	{
-		/* Reset */
 		posY = constantState::WINDOW_HEIGHT - constantState::PADDLE_HEIGHT;
 	}
 }

@@ -28,7 +28,7 @@ public:
     MovementComponent();
     virtual ~MovementComponent();
 
-	TypeOfHit		typyOfHit;
+	TypeOfHit typyOfHit;
 	TypeOfDirection typeOfDirection;
 	TypeOfDirection directionUpDown;
 
