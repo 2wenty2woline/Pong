@@ -76,12 +76,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\habea\source\SDL2\include;C:\Users\habea\source\SDL2_ttf-2.20.1\include;C:\Users\habea\source\SDL2_mixer-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL\SDL2\include;$(ProjectDir)\SDL\SDL2_mixer-2.6.2\include;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\habea\source\SDL2\lib\x64;C:\Users\habea\source\SDL2_ttf-2.20.1\lib\x64;C:\Users\habea\source\SDL2_mixer-2.6.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\SDL\SDL2_mixer-2.6.2\lib\x64;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\lib\x64;$(ProjectDir)\SDL\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -93,14 +93,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\habea\source\SDL2\include;C:\Users\habea\source\SDL2_ttf-2.20.1\include;C:\Users\habea\source\SDL2_mixer-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL\SDL2\include;$(ProjectDir)\SDL\SDL2_mixer-2.6.2\include;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\habea\source\SDL2\lib\x64;C:\Users\habea\source\SDL2_ttf-2.20.1\lib\x64;C:\Users\habea\source\SDL2_mixer-2.6.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\SDL\SDL2_mixer-2.6.2\lib\x64;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\lib\x64;$(ProjectDir)\SDL\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -110,12 +110,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\habea\source\SDL2\include;C:\Users\habea\source\SDL2_ttf-2.20.1\include;C:\Users\habea\source\SDL2_mixer-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL\SDL2\include;$(ProjectDir)\SDL\SDL2_mixer-2.6.2\include;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\habea\source\SDL2\lib\x64;C:\Users\habea\source\SDL2_ttf-2.20.1\lib\x64;C:\Users\habea\source\SDL2_mixer-2.6.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\SDL\SDL2_mixer-2.6.2\lib\x64;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\lib\x64;$(ProjectDir)\SDL\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -127,14 +127,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\habea\source\SDL2\include;C:\Users\habea\source\SDL2_ttf-2.20.1\include;C:\Users\habea\source\SDL2_mixer-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL\SDL2\include;$(ProjectDir)\SDL\SDL2_mixer-2.6.2\include;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\habea\source\SDL2\lib\x64;C:\Users\habea\source\SDL2_ttf-2.20.1\lib\x64;C:\Users\habea\source\SDL2_mixer-2.6.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\SDL\SDL2_mixer-2.6.2\lib\x64;$(ProjectDir)\SDL\SDL2_ttf-2.20.1\lib\x64;$(ProjectDir)\SDL\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
